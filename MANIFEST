@@ -1,0 +1,8 @@
+lib/Pod/Help.pm
+Makefile.PL
+MANIFEST
+README
+t/helper1.pl
+t/helper2.pl
+t/Pod-Help.t
+META.yml                                 Module meta-data (added by MakeMaker)
