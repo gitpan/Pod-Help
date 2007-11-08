@@ -9,28 +9,28 @@ BEGIN { use_ok('Pod::Help') };
 
 #########################
 
-my $text = `$^X t/helper1.pl`;
+my $text = `$^X examples/helper1.pl`;
 like($text, qr/program output/, 'automatic mode, not triggered');
 
-$text = `$^X t/helper1.pl -h`;
+$text = `$^X examples/helper1.pl -h`;
 like($text, qr/pod text/, 'automatic mode, triggered by parameter 1');
 
-$text = `$^X t/helper1.pl --help`;
+$text = `$^X examples/helper1.pl --help`;
 like($text, qr/pod text/, 'automatic mode, triggered by parameter 2');
 
-$text = `$^X t/helper1.pl --wrongparam`;
+$text = `$^X examples/helper1.pl --wrongparam`;
 like($text, qr/pod text/, 'automatic mode, not triggered, manually activated');
 
-$text = `$^X t/helper2.pl`;
+$text = `$^X examples/helper2.pl`;
 like($text, qr/program output/, 'manual mode, not triggered');
 
-$text = `$^X t/helper2.pl -h`;
+$text = `$^X examples/helper2.pl -h`;
 like($text, qr/program output/, 'manual mode, not triggered by parameter 1');
 
-$text = `$^X t/helper2.pl --help`;
+$text = `$^X examples/helper2.pl --help`;
 like($text, qr/program output/, 'manual mode, not triggered by parameter 2');
 
-$text = `$^X t/helper2.pl --wrongparam`;
+$text = `$^X examples/helper2.pl --wrongparam`;
 like($text, qr/pod text/, 'manual mode, not triggered, manually activated');
 
 #########################

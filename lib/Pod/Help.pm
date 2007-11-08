@@ -1,3 +1,4 @@
+## no critic
 package Pod::Help;
 
 use 5.006;
@@ -6,7 +7,7 @@ use warnings FATAL => 'all';
 
 our @ISA = qw();
 
-our $VERSION = '0.99';
+our $VERSION = '1.00';
 
 sub import($;@) {
 	my $class = shift;
@@ -35,6 +36,8 @@ sub help(;@) {
 
 1;
 __END__
+
+=for changes stop
 
 =head1 NAME
 
@@ -75,7 +78,7 @@ That's it, nothing more to do.
 
 =item manually triggered
 
-If you don't want Pod::Help to fiddle with your @ARGV, you may trigger the POD display manually. Use() Pod::Help without (or with an empty) parameter list and it will do nothing on its own. You may then call Pod::Help->help() (or Pod::Help::help()) at any time.
+If you don't want Pod::Help to fiddle with your @ARGV, you may trigger the POD display manually. Use() Pod::Help without (or with an empty) parameter list and it will do nothing on its own. You may then call Pod::Help->help() at any time.
 
   use Pod::Help;
   ...
@@ -99,6 +102,18 @@ You may give any parameters to help() that L<perldoc> would accept, too.
 
 =back
 
+=head1 METHODS
+
+=over 8
+
+=item help()
+
+Calling help() will try to display the POD and exit. For details, see above.
+
+=back
+
+=for changes continue
+
 =head1 HISTORY
 
 =over 8
@@ -119,7 +134,13 @@ Original version; created by h2xs 1.23 with options
 	-v
 	0.99
 
+=item 1.00
+
+Updated packaging for newer standards. No changes to the coding.
+
 =back
+
+=for changes stop
 
 =head1 SEE ALSO
 
@@ -132,7 +153,7 @@ Michael Jacob, E<lt>jacob@j-e-b.netE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2004 by Michael Jacob
+Copyright (C) 2004, 2007 by Michael Jacob
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.2 or,
